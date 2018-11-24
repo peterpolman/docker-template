@@ -1,0 +1,29 @@
+.idea/*
+.DS_Store
+_huisstijl
+
+# Composer files #
+##################
+vendor
+
+# Exclude only our custom folder and files.
+!html/
+html/*
+!html/sites/
+html/sites/*
+!html/sites/default/
+html/sites/default/*
+!html/sites/default/default.settings.php
+!html/sites/default/default.settings.local.php
+
+!html/modules/
+html/modules/*
+!html/modules/custom/
+
+!html/themes/
+html/themes/*
+!html/themes/custom/
+html/themes/custom/*/node_modules
+html/themes/custom/*/components
+
+!html/VERSION.txt

@@ -1,0 +1,26 @@
+core: 8.x
+type: theme
+base theme: bootstrap
+
+name: 'Ben.nl - Shop'
+description: 'Custom theme for Ben.nl Shop based on Bootstrap.'
+package: 'BEN'
+
+regions:
+  navigation: 'Navigation'
+  navigation_collapsible: 'Navigation (Animated)'
+  header: 'Header'
+  highlighted: 'Highlighted'
+  content: 'Content'
+  sidebar_first: 'Primary'
+  sidebar_second: 'Secondary'
+  footer: 'Footer'
+  page_top: 'Page top'
+  page_bottom: 'Page bottom'
+
+libraries-extend:
+  bootstrap/framework:
+    - ben/framework
+
+libraries-override:
+  core/drupal.tableresponsive: false

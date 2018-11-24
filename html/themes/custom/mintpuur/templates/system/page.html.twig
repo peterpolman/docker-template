@@ -1,0 +1,76 @@
+{# Navbar #}
+{% if page.navigation %}
+  {% block navbar %}
+    {{ page.navigation }}
+  {% endblock %}
+{% endif %}
+
+{# Highlighed #}
+{% if page.highlighted %}
+  {% block highlighted  %}
+    {{ page.highlighted  }}
+  {% endblock %}
+{% endif %}
+
+{# Jumbotron #}
+{% if page.header %}
+  {% block jumbotron %}
+
+    {% block header %}
+      {{ page.header }}
+    {% endblock %}
+
+  {% endblock %}
+{% endif %}
+
+{# Main #}
+{% block main %}
+  <main role="main" class="container js-quickedit-main-content">
+    <div class="row">
+      {# Sidebar First #}
+      {% if page.sidebar_first %}
+        {% block sidebar_first %}
+          <aside class="col-md-3" role="complementary">
+            {{ page.sidebar_first }}
+          </aside>
+        {% endblock %}
+      {% endif %}
+
+      {# Content #}
+      {%
+        set content_classes = [
+        page.sidebar_first and page.sidebar_second ? 'col-md-6',
+        page.sidebar_first and page.sidebar_second is empty ? 'col-md-9',
+        page.sidebar_second and page.sidebar_first is empty ? 'col-md-9',
+        page.sidebar_first is empty and page.sidebar_second is empty ? 'col-md-12'
+      ]
+      %}
+
+      <section{{ content_attributes.addClass(content_classes) }}>
+        {# Content #}
+        {% if page.content %}
+          <a id="main-content"></a>
+          {{ page.content }}
+        {% endif %}
+      </section>
+
+      {# Sidebar Second #}
+      {% if page.sidebar_second %}
+        {% block sidebar_second %}
+          <aside class="col-md-3" role="complementary">
+            {{ page.sidebar_second }}
+          </aside>
+        {% endblock %}
+      {% endif %}
+    </div>
+  </main>
+{% endblock %}
+
+{# Footer #}
+{% block footer %}
+  <footer class="region-footer" role="contentinfo">
+    <div class="{{ container }}">
+      {{ page.footer }}
+    </div>
+  </footer>
+{% endblock %}
