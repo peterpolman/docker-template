@@ -1,0 +1,57 @@
+
+.page-workshops {
+
+  .view-content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .views-row {
+    position: relative;
+    height: auto;
+    flex: 0 calc(100% / 3);
+  }
+
+  .workshop--teaser {
+    display: block;
+    background-size: cover;
+    display: flex;
+    flex: 0 100%;
+    height: 300px;
+
+    &:hover {
+      text-decoration: none;
+
+      .workshop__content {
+        opacity: 1;
+      }
+    }
+
+    .workshop__content {
+      flex: 1 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      background: rgba(255,255,255,0.80);
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: .2s opacity ease;
+    }
+
+    h2 {
+      color: $black;
+    }
+
+    .workshop__duration {
+      color: $black;
+    }
+
+    .workshop__price {
+      color: $black;
+    }
+  }
+
+}

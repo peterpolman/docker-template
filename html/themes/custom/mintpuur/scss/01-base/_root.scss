@@ -1,0 +1,68 @@
+.hidden {
+  display: none;
+}
+
+.hidden-sm {
+  @media (max-width: $screen-md) {
+    display: none !important;
+  }
+}
+
+.hidden-md {
+  @media (min-width: $screen-md) and (max-width: $screen-lg) {
+    display: none !important;
+  }
+}
+
+.hidden-lg {
+  @media (min-width: $screen-lg) and (max-width: $screen-xl) {
+    display: none !important;
+  }
+}
+
+.hidden-xl {
+  @media (min-width: $screen-xl) {
+    display: none !important;
+  }
+}
+
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
+
+.align-center {
+  text-align: center;
+}
+
+body {
+  background-color: $gray-lighter;
+  padding-top: 0;
+
+  &.navbar-shown {
+    padding-top: 64px;
+  }
+
+  & > svg {
+    display: none;
+  }
+}
+
+.region-navigation {
+  position: relative;
+  z-index: 2;
+}
+
+hr {
+  border: 0;
+  height: 2px;
+  margin: 0 0 1rem;
+  background-color: $gray-lighter;
+}
+
+.sso-pixels {
+  visibility: hidden;
+}

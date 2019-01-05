@@ -14,11 +14,12 @@ const options = {};
 options.theme = {
     root: __dirname + '/',
     assets: __dirname + '/components/doc_assets/assets/',
-    styles: __dirname + '/styles.scss',
+    styles: __dirname + '/scss/styles.scss',
     css: __dirname + '/assets/css/',
     fonts: __dirname + '/assets/fonts/',
     icons: __dirname + '/assets/icons/',
-    images: __dirname + '/assets/images/'
+    images: __dirname + '/assets/images/',
+    components: __dirname + '/scss/styles.scss'
 };
 
 options.scss = {

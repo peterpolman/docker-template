@@ -1,0 +1,198 @@
+/*doc
+---
+title: Modals
+name: modals
+category: 04_organisms
+---
+
+```html_example
+<button class="btn btn-default" data-toggle="modal" data-target="#modal-search">Open Modal</button>
+
+
+<div class="modal fade" id="modal-search" tabindex="-1" role="dialog" aria-labelledby="modal-search-label">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <svg role="img" class="icon">
+                        <use xlink:href="#close"></use>
+                    </svg>
+                </button>
+                <h4 class="modal-title" id="modal-search-label">
+                    <svg role="img" class="icon">
+                        <use xlink:href="#search"></use>
+                    </svg>
+                    Klant zoeken
+                </h4>
+            </div>
+            <div class="modal-body">
+              <p>Modal body text</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" data-dismiss="modal" aria-label="Annuleren" class="btn btn-link">Annuleren</button>
+                <a href="#" class="btn btn-success">Zoeken</a>
+            </div>
+        </div>
+    </div>
+</div>
+```
+*/
+
+.modal {
+  display: none;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: $zindex-modal;
+  -webkit-overflow-scrolling: touch;
+
+  // Prevent Chrome on Windows from adding a focus outline. For details, see
+  // https://github.com/twbs/bootstrap/pull/10951.
+  outline: 0;
+
+  // When fading in the modal, animate it to slide down
+  &.fade .modal-dialog {
+    //@include translate(0, -25%);
+    //@include transition-transform(0.3s ease-out);
+    transform: scale(0.5) translateZ(0) translate3d(0, 0, 0);
+    transition: transform 450ms cubic-bezier(0.85, -0.4, 0.2, 1.45),opacity 250ms ease-in-out,-webkit-transform 450ms cubic-bezier(0.85, -0.4, 0.2, 1.45);
+  }
+  &.in .modal-dialog {
+    opacity: 1;
+    transform: scale(1) translateZ(0) translate3d(0, 0, 0);
+  }
+
+  .btn-default.btn-success span {
+    color: $white;
+  }
+
+  form > .alert {
+    margin-bottom: 1rem;
+    margin-top: 0;
+  }
+}
+
+.modal-open .modal {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.modal-dialog {
+  position: relative;
+  width: auto;
+  margin: 10px;
+}
+
+.modal-content {
+  position: relative;
+  background-color: $modal-content-bg;
+  border-radius: $border-radius-small;
+  background-clip: padding-box;
+  // Remove focus outline from opened modal
+  outline: 0;
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: $zindex-modal-background;
+  background-color: $modal-backdrop-bg;
+  // Fade for backdrop
+  &.fade { /*@include opacity(0);*/ }
+  &.in { /*@include opacity($modal-backdrop-opacity);*/ }
+}
+
+.modal-header {
+  padding: 2rem 2rem 1rem;
+  @include clearfix;
+}
+// Close icon
+.modal-header .close {
+  margin-top: -2px;
+}
+
+// Title text within header
+.modal-title {
+  margin: 0;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  line-height: 1;
+
+  .icon {
+    height: 1.25rem;
+    width: 1.25rem;
+  }
+
+  @media (min-width: $screen-md) {
+    font-size: 2.5rem;
+
+    .icon {
+      height: 2rem;
+      width: 2rem;
+    }
+
+  }
+
+}
+
+// Modal body
+// Where all modal content resides (sibling of .modal-header and .modal-footer)
+.modal-body {
+  position: relative;
+  padding: 1rem 2rem;
+}
+
+// Footer (for actions)
+.modal-footer {
+  padding: 1rem 2rem 2rem;
+  text-align: right; // right align buttons
+  @include clearfix; // clear it in case folks use .pull-* classes on buttons
+
+  // Properly space out buttons
+  .btn + .btn {
+    margin-left: 5px;
+    margin-bottom: 0; // account for input[type="submit"] which gets the bottom margin like all other inputs
+  }
+  // but override that for button groups
+  .btn-group .btn + .btn {
+    margin-left: -1px;
+  }
+  // and override it for block buttons as well
+  .btn-block + .btn-block {
+    margin-left: 0;
+  }
+}
+
+// Fix for Drupal modal-footer btn-default overriding behaviour
+.modal-footer .btn-link {
+  background-color: transparent;
+}
+
+// Measure scrollbar width for padding body during modal show/hide
+.modal-scrollbar-measure {
+  position: absolute;
+  top: -9999px;
+  width: 50px;
+  height: 50px;
+  overflow: scroll;
+}
+
+// Scale up the modal
+@media (min-width: $screen-md) {
+  // Automatically set modal's width for larger viewports
+  .modal-dialog {
+    width: 100%;
+    max-width: $screen-md;
+    margin: 5rem auto;
+  }
+  .modal-content {
+    box-shadow: 0 5px 15px rgba(0,0,0,.5);
+  }
+
+}

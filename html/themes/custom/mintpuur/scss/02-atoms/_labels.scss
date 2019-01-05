@@ -1,0 +1,27 @@
+.label {
+  display: block;
+  max-width: 80%;
+  padding: 1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  background-color: $white;
+  border-top-right-radius: $border-radius-base;
+  border-bottom-right-radius: $border-radius-base;
+  font-size: $font-size-small;
+  text-align: left;
+
+  @media (min-width: $screen-lg) {
+    font-size: $font-size-base;
+  }
+
+}
+
+.label-red {
+  background-color: $red;
+  color: $white;
+}
+
+.label-blue {
+  background-color: $blue;
+  color: $white;
+}

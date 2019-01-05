@@ -1,0 +1,33 @@
+/*doc
+---
+title: Status
+name: status
+category: 02_atoms
+---
+
+```html_example
+<span class="status status-available">Leverbaar vanaf 6 maart</span>
+```
+
+*/
+
+.status {
+  position: relative;
+  font-size: $font-size-base;
+  font-weight: normal;
+  margin-left: 1rem;
+
+  &:before {
+    content: "";
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: $gray-lighter;
+    margin-right: .5rem;
+  }
+
+  &.status-available:before {
+    background-color: $brand-success;
+  }
+}

@@ -1,0 +1,65 @@
+<?php
+
+/**
+ * @file
+ * Bootstrap sub-theme.
+ *
+ * Place your custom PHP code in this file.
+ */
+
+/**
+ * Implements template_preprocess_html().
+ */
+function mintpuur_preprocess_html(array &$variables) {
+  kint_require();
+  Kint::$maxLevels = 5;
+  
+  $current_route = \Drupal::routeMatch();
+  $node = $current_route->getParameters()->get('node');
+
+  if (!empty($node)) {
+    $variables['header_image'] = $node->get('field_header_image')->entity->uri->value;
+  }
+
+  // Unconditionally add AJAX to the page.
+  $variables['#attached']['library'][] = 'core/drupal.ajax';
+
+  // Get all SVG Icons.
+  // $variables['svg_icons'] = file_get_contents(drupal_get_path('theme', 'ben') . '/assets/icons/icons.svg');
+
+  // Add class to body for maintenance page.
+  if (!empty($variables['page']['#theme']) && $variables['page']['#theme'] === 'maintenance_page') {
+    $variables['attributes']['class'][] = 'page-offline';
+    // We set the rootpath for the Jumbotron image path. See html.html.twig.
+    $variables['root_path'] = 'offline';
+  }
+}
+
+// function mintpuur_preprocess_taxonomy_term($variables) {
+//
+// }
+
+/**
+ * Implements hook_theme_suggestions_hook_alter().
+ */
+function mintpuur_theme_suggestions_views_view_unformatted_alter(array &$suggestions, array $variables, $hook) {
+  $suggestions[] = $hook . '__custom';
+}
+
+/**
+ * Implements hook_theme_suggestions_hook_alter().
+ */
+function mintpuur_theme_suggestions_form_alter(array &$suggestions, array $variables, $hook) {
+  $suggestions[] = $hook . '__' . $variables['element']['#form_id'];
+}
+
+/**
+ * Implements custom minimal wrapper.
+ *
+ * Only printing label & input for an element.
+ */
+function mintpuur_theme_suggestions_form_element_alter(array &$suggestions, array $variables) {
+  if (!empty($variables['element']['#minimal'])) {
+    $suggestions[] = 'form_element__minimal';
+  }
+}

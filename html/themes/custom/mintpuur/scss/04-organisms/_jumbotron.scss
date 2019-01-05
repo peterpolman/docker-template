@@ -1,0 +1,47 @@
+.jumbotron {
+  margin-bottom: 3rem;
+  background-color: $brand-primary;
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+  width: 100%;
+  padding-top: $jumbotron-padding;
+  min-height: 220px;
+
+  .panel {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .panel-title {
+    border-bottom: 0;
+  }
+
+  @media (min-width: $screen-md) {
+    padding: $jumbotron-padding ($jumbotron-padding / 2);
+
+    .panel {
+      border-radius: $panel-border-radius;
+    }
+  }
+
+  h1 {
+    font-size: 2rem;
+    color: $white;
+    margin-top: 1rem;
+
+    @media (min-width: $screen-md) {
+      margin-top: 0;
+      font-size: 3rem;
+    }
+  }
+}
+
+.jumbotron-fluid {
+  padding-right: 0;
+  padding-left: 0;
+}

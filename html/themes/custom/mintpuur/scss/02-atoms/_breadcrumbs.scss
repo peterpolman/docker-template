@@ -1,0 +1,40 @@
+/*doc
+---
+title: Breadcrumbs
+name: breadcrumbs
+category: 02_atoms
+---
+
+```html_example
+<ul class="breadcrumbs">
+    <li>Home <span>▶</span></li>
+    <li>Telefoons <span>▶</span></li>
+    <li class="active">Samsung Galaxy J5 (2017)</li>
+</ul>
+```
+
+*/
+
+.breadcrumbs {
+  display: none;
+  padding: 1.5rem 0 0;
+  border-radius: $border-radius-base;
+
+  > li {
+    display: inline-block;
+
+    span {
+      font-size: 10px;
+      color: $text-color;
+      margin: 0 .5rem;
+    }
+  }
+
+  > .active {
+    color: $brand-primary;
+  }
+
+  @media (min-width: $screen-md) {
+    display: block;
+  }
+}

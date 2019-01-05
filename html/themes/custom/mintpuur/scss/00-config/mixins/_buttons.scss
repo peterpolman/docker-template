@@ -1,0 +1,32 @@
+@mixin add-button-states($brand-color) {
+  &:not(.disabled):not([disabled]):not(.btn-is-loading) {
+    &:hover {
+      background: darken($brand-color, 10%);
+      box-shadow: inset 0 -3px 0 0 darken($brand-color, 15%);
+    }
+
+    &:focus:hover {
+      box-shadow: none;
+    }
+
+    &.btn-loader:not(.btn-is-loading) {
+      &:focus,
+      &:active {
+        background-color: darken($brand-color, 10%);
+        box-shadow: none;
+      }
+    }
+  }
+
+  &.btn-loader.btn-is-loading {
+    background-color: lighten($brand-color, 20%);
+
+    &:focus {
+      background-color: lighten($brand-color, 20%);
+    }
+
+    &:before {
+      background-color: darken($brand-color, 10%);
+    }
+  }
+}

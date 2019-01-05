@@ -1,5 +1,5 @@
 <?php
-namespace Drupal\ben\Plugin\Preprocess;
+namespace Drupal\mintpuur\Plugin\Preprocess;
 use Drupal\bootstrap\Plugin\Preprocess\FormElementLabel as BaseFormElementLabel;
 use Drupal\bootstrap\Utility\Element;
 use Drupal\bootstrap\Utility\Variables;

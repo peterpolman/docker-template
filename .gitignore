@@ -24,6 +24,5 @@ html/modules/*
 html/themes/*
 !html/themes/custom/
 html/themes/custom/*/node_modules
-html/themes/custom/*/components
 
 !html/VERSION.txt

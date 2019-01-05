@@ -1,0 +1,22 @@
+core: 8.x
+type: theme
+base theme: bootstrap
+
+name: 'Mint & Puur'
+description: 'Custom theme for Mint & Puur Creatief.'
+
+regions:
+  navigation: 'Navigation'
+  header: 'Header'
+  highlighted: 'Highlighted'
+  content: 'Content'
+  footer: 'Footer'
+  page_top: 'Page top'
+  page_bottom: 'Page bottom'
+
+libraries-extend:
+  bootstrap/framework:
+    - mintpuur/framework
+
+libraries-override:
+  core/drupal.tableresponsive: false

@@ -1,0 +1,88 @@
+/*doc
+---
+title: Icons
+name: icons
+category: 02_atoms
+---
+
+
+```html_example
+<svg role="img" class="icon">
+  <use xlink:href="#arrow"></use>
+</svg>
+<svg role="img" class="icon">
+  <use xlink:href="#betalinglevering"></use>
+</svg>
+<svg role="img" class="icon">
+  <use xlink:href="#cart"></use>
+</svg>
+<svg role="img" class="icon">
+  <use xlink:href="#info"></use>
+</svg>
+<svg role="img" class="icon">
+  <use xlink:href="#customer"></use>
+</svg>
+<svg role="img" class="icon">
+  <use xlink:href="#extraaansluiten"></use>
+</svg>
+<svg role="img" class="icon">
+  <use xlink:href="#mobile"></use>
+</svg>
+<svg role="img" class="icon">
+  <use xlink:href="#new"></use>
+</svg>
+<svg role="img" class="icon">
+  <use xlink:href="#nummerbehoud"></use>
+</svg>
+<svg role="img" class="icon">
+  <use xlink:href="#order"></use>
+</svg>
+<svg role="img" class="icon">
+  <use xlink:href="#search"></use>
+</svg>
+<svg role="img" class="icon">
+  <use xlink:href="#shop"></use>
+</svg>
+<svg role="img" class="icon">
+  <use xlink:href="#simonly"></use>
+</svg>
+<svg role="img" class="icon">
+  <use xlink:href="#tarieven"></use>
+</svg>
+<svg role="img" class="icon">
+  <use xlink:href="#toestelspecificaties"></use>
+</svg>
+<svg role="img" class="icon">
+  <use xlink:href="#verleng"></use>
+</svg>
+<svg role="img" class="icon">
+  <use xlink:href="#vervang"></use>
+</svg>
+<svg role="img" class="icon">
+  <use xlink:href="#facebook"></use>
+</svg>
+<svg role="img" class="icon">
+  <use xlink:href="#twitter"></use>
+</svg>
+<svg role="img" class="icon">
+  <use xlink:href="#instagram"></use>
+</svg>
+<svg role="img" class="icon">
+  <use xlink:href="#youtube"></use>
+</svg>
+<svg role="img" class="icon">
+  <use xlink:href="#close"></use>
+</svg>
+```
+
+*/
+
+.icon {
+  width: $font-size-base;
+  height: $font-size-base;
+
+  g {
+    fill: $text-color;
+  }
+}
+

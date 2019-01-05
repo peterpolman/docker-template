@@ -1,0 +1,123 @@
+/*doc
+---
+title: Alert
+name: alert
+category: 02_atoms
+---
+
+```html_example
+<div class="alert alert-success">
+  This is an alert with a success message.
+</div>
+```
+
+```html_example
+<div class="alert alert-warning">
+  This is an alert with a warning message.
+</div>
+```
+
+```html_example
+<div class="alert alert-danger">
+  This is an alert with a dangerous message. And a close button.
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <svg role="img" class="icon">
+        <use xlink:href="#close"></use>
+    </svg>
+  </button>
+</div>
+```
+
+*/
+
+
+.alert {
+  padding: 1rem;
+  margin-top: 1rem;
+  border: 1px solid transparent;
+  border-radius: $border-radius-small;
+
+  // Headings for larger alerts
+  h4 {
+    margin-top: 0;
+    // Specified for the h4 to prevent conflicts of changing $headings-color
+    color: inherit;
+  }
+
+  // Provide class for links that match alerts
+  .alert-link {
+    font-weight: bold;
+  }
+
+  // Improve alignment and spacing of inner content
+  > p,
+  > ul {
+    margin-bottom: 0;
+  }
+
+  > p + p {
+    margin-top: 5px;
+  }
+}
+
+.alert-sm {
+  padding: .5rem;
+  font-size: $font-size-small;
+}
+
+// Dismissible alerts
+//
+// Expand the right padding and account for the close button's positioning.
+
+.alert-dismissable, // The misspelled .alert-dismissable was deprecated in 3.2.0.
+.alert-dismissible {
+  padding-right: 55px;
+  @media (min-width: $screen-md) {
+    padding-right: 1rem;
+  }
+  position: relative;
+
+  // Adjust close link position
+  .close {
+    color: inherit;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: .5rem;
+    margin: .5rem;
+  }
+}
+
+// Alternate styles
+//
+// Generate contextual modifier classes for colorizing the alert.
+
+.alert-success {
+  background-color: $alert-success-bg;
+  border: 1px solid $alert-success-border;
+  color: $alert-success-text;
+}
+
+.alert-info {
+  background-color: $alert-info-bg;
+  border: 1px solid $alert-info-border;
+  color: $alert-info-text;
+}
+
+.alert-warning {
+  background-color: $alert-warning-bg;
+  border: 1px solid $alert-warning-border;
+  color: $alert-warning-text;
+}
+
+.alert-danger {
+  background-color: $alert-danger-bg;
+  border: 1px solid $alert-danger-border;
+  color: $alert-danger-text;
+}
+
+.alert-default {
+  background-color: $alert-default-bg;
+  border: 1px solid $alert-default-border;
+  color: $alert-default-text;
+}

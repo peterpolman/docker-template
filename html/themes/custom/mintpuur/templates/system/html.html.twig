@@ -8,10 +8,6 @@
   theme.has_glyphicons ? 'has-glyphicons',
 ]
 %}
-{% set ben_xl = header_images.ben_xl ? header_images.ben_xl : '../' ~ base_path ~ directory ~ '/assets/images/jumbotron-page-' ~ root_path|clean_class ~ '-xl.jpg' %}
-{% set ben_lg = header_images.ben_lg ? header_images.ben_lg : '../' ~ base_path ~ directory ~ '/assets/images/jumbotron-page-' ~ root_path|clean_class ~ '-lg.jpg' %}
-{% set ben_md = header_images.ben_md ? header_images.ben_md : '../' ~ base_path ~ directory ~ '/assets/images/jumbotron-page-' ~ root_path|clean_class ~ '-md.jpg' %}
-{% set ben_xs = header_images.ben_xs ? header_images.ben_xs : '../' ~ base_path ~ directory ~ '/assets/images/jumbotron-page-' ~ root_path|clean_class ~ '-xs.jpg' %}
 <!DOCTYPE html>
 <html {{ html_attributes }}>
 <head>
@@ -22,22 +18,7 @@
       <js-placeholder token="{{ placeholder_token|raw }}">
         <style>
           .jumbotron {
-            background-image: url({{ ben_xs }});
-          }
-          @media (min-width: 768px) {
-            .jumbotron {
-              background-image: url({{ ben_md }});
-            }
-          }
-          @media (min-width: 992px) {
-            .jumbotron {
-              background-image: url({{ ben_lg }});
-            }
-          }
-          @media (min-width: 1200px) {
-            .jumbotron {
-              background-image: url({{ ben_xl }});
-            }
+            background-image: url({{ file_url(header_image) }});
           }
         </style>
         </head>

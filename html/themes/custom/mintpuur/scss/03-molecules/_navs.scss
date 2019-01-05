@@ -1,0 +1,177 @@
+// Base class
+//
+// Kickstart any navigation component with a set of style resets. Works with
+// `<nav>`s or `<ul>`s.
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+
+  > li {
+    position: relative;
+    display: block;
+
+    > a {
+      position: relative;
+      display: block;
+      padding: 1rem .5rem;
+      &:hover,
+      &:focus {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.nav-horizontal {
+  display: flex;
+  align-items: left;
+
+  > li {
+    float: none;
+  }
+
+  @media (min-width: $screen-md) {
+    > li {
+      > a {
+        padding: 11px 1rem 10px;
+        font-weight: bold;
+        font-size: 18px;
+        margin: .5rem 0;
+      }
+    }
+  }
+}
+
+.nav-tabs li a,
+.nav-link {
+  display: block;
+  padding: $nav-link-padding-y $nav-link-padding-x;
+
+  // Disabled state lightens text
+  &.disabled {
+    color: $nav-link-disabled-color;
+  }
+
+  &.active {
+    text-decoration: underline;
+  }
+}
+
+//
+// Tabs
+//
+.tabs {
+  width: 100%;
+  padding: 0 1rem;
+  margin-bottom: 1rem;
+}
+
+.nav-tabs {
+  border-bottom: $nav-tabs-border-width solid $nav-tabs-border-color;
+  margin: 0;
+
+  li,
+  .nav-item {
+    margin-bottom: -$nav-tabs-border-width;
+  }
+
+  a,
+  .nav-link {
+    border: $nav-tabs-border-width solid transparent;
+    border-top-left-radius: $nav-tabs-border-radius;
+    border-top-right-radius: $nav-tabs-border-radius;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      border-color: $nav-tabs-link-hover-border-color;
+    }
+
+    &.disabled {
+      color: $nav-link-disabled-color;
+      background-color: transparent;
+      border-color: transparent;
+    }
+  }
+
+  li.active a,
+  .nav-link.active,
+  .nav-item.show .nav-link {
+    color: $nav-tabs-link-active-color;
+    background-color: $nav-tabs-link-active-bg;
+    border-color: $nav-tabs-link-active-border-color;
+    text-decoration: none;
+  }
+
+  .dropdown-menu {
+    // Make dropdown border overlap tab border
+    margin-top: -$nav-tabs-border-width;
+    // Remove the top rounded corners here since there is a hard edge above the menu
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+}
+
+
+//
+// Pills
+//
+
+.nav-pills {
+
+  a,
+  .nav-link {
+    border-radius: $nav-pills-border-radius;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+  }
+
+  li.active a,
+  .nav-link.active,
+  .show > .nav-link {
+    color: $nav-pills-link-active-color;
+    background-color: $nav-pills-link-active-bg;
+    text-decoration: none;
+  }
+}
+
+
+//
+// Justified variants
+//
+
+.nav-fill {
+  .nav-item {
+    flex: 1 1 auto;
+    text-align: center;
+  }
+}
+
+.nav-justified {
+  .nav-item {
+    flex-basis: 0;
+    flex-grow: 1;
+    text-align: center;
+  }
+}
+
+
+// Tabbable tabs
+//
+// Hide tabbable panes to start, show them when `.active`
+
+.tab-content {
+  > .tab-pane {
+    display: none;
+  }
+  > .active {
+    display: block;
+  }
+}
