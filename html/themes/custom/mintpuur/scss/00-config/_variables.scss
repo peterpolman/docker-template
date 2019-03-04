@@ -8,6 +8,7 @@ $green: #39CC4E;
 $white: #FFFFFF;
 $black: #000000;
 $yellow: #faebcc;
+$purple: #424986;
 
 $blue-light: #d9edf7;
 $blue-dark: #31708f;
@@ -18,7 +19,7 @@ $gray: #999;
 $gray-light: #D8D8D8;
 $gray-lighter: #EFEFEF;
 
-$brand-primary: $mint;
+$brand-primary: $purple;
 $brand-danger: $red;
 $brand-success: $green;
 $brand-info: $blue-light;
@@ -27,11 +28,11 @@ $brand-warning: $yellow;
 $text-color: $black;
 
 // Font & typography
-$font-family-base: 'Trebuchet MS', sans-serif;
+$font-family-base: 'PT Sans Narrow', sans-serif;
 $font-family-heading: 'Breamcatcher', Arial, sans-serif;
 $font-family-monospace: 'Consolas', 'Courier';
 $font-size-small: 12px;
-$font-size-base: 14px;
+$font-size-base: 16px;
 $font-size-large: 18px;
 $font-size-xl: 23px;
 $font-size-xxl: 33px;

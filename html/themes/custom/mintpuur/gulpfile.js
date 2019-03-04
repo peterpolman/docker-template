@@ -73,7 +73,7 @@ gulp.task('styles', function () {
 });
 
 gulp.task('styles:watch', function () {
-    gulp.watch(options.theme.components, ['styles']);
+    gulp.watch(__dirname + '/scss/**/*', ['styles']);
 });
 
 gulp.task('build', ['styles', 'fonts', 'icons', 'images']);

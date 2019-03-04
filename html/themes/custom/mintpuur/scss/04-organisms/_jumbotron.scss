@@ -1,7 +1,7 @@
 .jumbotron {
   margin-bottom: 3rem;
   background-color: $brand-primary;
-  background-size: cover;
+  background-size: auto 100%;
   background-position: center center;
   position: relative;
   display: flex;
@@ -32,10 +32,11 @@
   h1 {
     font-size: 2rem;
     color: $white;
-    margin-top: 1rem;
+    letter-spacing: 2px;
 
     @media (min-width: $screen-md) {
       margin-top: 0;
+      margin-bottom: 0;
       font-size: 3rem;
     }
   }
@@ -44,4 +45,9 @@
 .jumbotron-fluid {
   padding-right: 0;
   padding-left: 0;
+}
+
+.jumbotron-lg {
+  height: calc(100vh - 64px);
+  background-size: cover;
 }

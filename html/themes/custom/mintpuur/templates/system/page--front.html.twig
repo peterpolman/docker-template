@@ -7,20 +7,20 @@
 
 {# Jumbotron #}
 {% if page.header %}
-  <section class="jumbotron jumbotron-fluid">
-  {% block jumbotron %}
+  <section class="jumbotron jumbotron-fluid jumbotron-lg">
+    {% block jumbotron %}
 
-    {% block header %}
-      {{ page.header }}
+      {% block header %}
+        {{ page.header }}
+      {% endblock %}
+
     {% endblock %}
-
-  {% endblock %}
   </section>
 {% endif %}
 
 {# Highlighed #}
 {% if page.highlighted %}
-  {% block highlighted  %}
+  {% block highlighted %}
     {{ page.highlighted  }}
   {% endblock %}
 {% endif %}
@@ -71,27 +71,8 @@
 {# Footer #}
 {% block footer %}
   <footer class="region-footer" role="contentinfo">
-    <div class="container">
-
+    <div class="{{ container }}">
       {{ page.footer }}
-
-      <div class="row">
-            <ul class="list list-inline">
-            {% for image in instagram %}
-                <li>
-                    <a href="{{ image.url }}" class="image-instagram" target="_blank">
-                        <img src="{{ image.src }}" alt="Instagram image" />
-                    </a>
-                </li>
-            {% endfor %}
-            </ul>
-      </div>
-
-      <div class="row">
-          <div class="col-md-12">
-              <p class="text-copyright">&copy; Copyright Mint & Puur 2019</p>
-          </div>
-      </div>
     </div>
   </footer>
 {% endblock %}

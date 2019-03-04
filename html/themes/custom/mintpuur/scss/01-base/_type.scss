@@ -14,7 +14,7 @@ img {
 }
 
 a {
-  color: $green-light;
+  color: $brand-primary;
   text-decoration: none;
 
   &:hover {
@@ -85,22 +85,6 @@ a {
   fill: $gray;
 }
 
-.text-price {
-  font-weight: bold;
-}
-
-.logo {
-  color: white;
-  position: relative;
-  margin-right: .2rem;
-  color: $brand-primary;
-
-  .registered {
-    color: $black;
-  }
-
-}
-
 .strikethrough {
   position: relative;
   color: $gray;
@@ -135,17 +119,5 @@ a {
 
   &.circle-blue {
     background-color: $blue;
-  }
-}
-
-.product-price {
-  font-size: $font-size-base;
-
-  strong {
-    font-size: $font-size-xxl;
-  }
-
-  small {
-    font-size: $font-size-base;
   }
 }

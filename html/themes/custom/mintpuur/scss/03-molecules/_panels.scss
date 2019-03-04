@@ -1,48 +1,3 @@
-/*doc
----
-title: Panel
-name: panel
-category: 03_molecules
----
-
-```html_example
-<section class="panel panel-default">
-  <h2 class="panel-title">Welkom bij Ben!</h2>
-  <div class="panel-body">
-    <p>Lorem ipsum dolor sit amet.</p>
-  </div>
-</section>
-
-<section class="panel panel-white">
-  <h2 class="panel-title">Welkom bij Ben!</h2>
-  <div class="panel-body">
-    <p>Lorem ipsum dolor sit amet.</p>
-  </div>
-</section>
-
-<section class="panel panel-blue">
-  <h2 class="panel-title">Welkom bij Ben!</h2>
-  <div class="panel-body">
-    <p>Lorem ipsum dolor sit amet.</p>
-  </div>
-</section>
-```
-
-
-```html_example
-<section class="panel panel-white">
-  <div class="panel-header panel-header-blue">
-    <a href="#" target="_blank">
-        <img src="../assets/images/banner-peter-rabbit.jpg" alt="Ad for the Peter Rabbit movie">
-    </a>
-  </div>
-  <div class="panel-body">
-    <p>Lorem ipsum dolor sit amet.</p>
-  </div>
-</section>
-```
-*/
-
 .panel {
   width: auto;
   padding: 1rem;
@@ -70,9 +25,11 @@ category: 03_molecules
   img {
     margin-bottom: 1rem;
   }
+
   p img {
     margin-bottom: 0;
   }
+
 }
 
 .panel-title {

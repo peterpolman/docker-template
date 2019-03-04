@@ -1,0 +1,17 @@
+.page-home {
+    .jumbotron {
+        background-image: url(../images/background.jpg)
+    }
+  .page-header {
+    width: 100%;
+    font-size: 0;
+    color: #424986;
+    display: block;
+    text-align: center;
+
+    &:before {
+      content: "Mint & Puur";
+      font-size: 100px;
+    }
+  }
+}
