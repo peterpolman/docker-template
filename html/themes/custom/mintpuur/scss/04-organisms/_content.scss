@@ -1,16 +1,12 @@
 .region-content {
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   padding: 1rem;
   background-color: white;
   border-radius: $border-radius-base;
 
   @media (min-width: $screen-md) {
     padding: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
   }
-}
-
-.region-content-bottom {
-  background-color: $white;
-  padding: 3rem 0 2rem;
-  margin-top: 3rem;
 }

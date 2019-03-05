@@ -19,26 +19,25 @@ function mintpuur_preprocess_html(array &$variables) {
 
   if (!empty($node)) {
 
-    if ($node->getType() === 'homepage') {
-      $uri = $node->get('field_header_image')->entity->uri->value;
-      $variables['header_image'] = ImageStyle::load('jumbotron_image')->buildUrl($uri);
-    }
+    if ($node->getType() === 'page') {
+      $field = $node->get('field_header_image');
 
-    if ($node->getType() === 'pagina') {
-      $uri = $node->get('field_header_image')->entity->uri->value;
-      $variables['header_image'] = ImageStyle::load('header_image')->buildUrl($uri);
+      if (!empty($field->entity)) {
+        $uri = $field->entity->uri->value;
+        $variables['header_image'] = ImageStyle::load('header_image')->buildUrl($uri);
+      }
     }
 
     if ($node->getType() === 'workshop') {
       $new_node = $node->get('field_workshop_type')->referencedEntities();
-      $uri = $new_node[0]->get('field_workshop_header_image')->entity->uri->value;
+      $uri = $new_node[0]->get('field_header_image')->entity->uri->value;
       $variables['header_image'] = ImageStyle::load('header_image')->buildUrl($uri);
     }
   }
 
   if (!empty($term)) {
     $fields = $term->getFields();
-    $field = $fields['field_workshop_header_image']->getValue();
+    $field = $fields['field_header_image']->getValue();
 
     if (!empty($field)) {
       $uri = file_load($field[0]['target_id'])->getFileUri();
@@ -55,7 +54,8 @@ function mintpuur_preprocess_html(array &$variables) {
 }
 
 function mintpuur_preprocess_page(array &$variables) {
-  $access_token = "30798236.1677ed0.2074b25b9d5a48768423a993f02eac1a";
+  // $access_token = "30798236.1677ed0.2074b25b9d5a48768423a993f02eac1a";
+  $access_token = "7947176789.1677ed0.dfa15968bea94c1ca127e88172f65d25";
   $return = rudr_instagram_api_curl_connect("https://api.instagram.com/v1/users/self/media/recent/?access_token=" . $access_token . '&count=3');
 
   foreach ($return->data as $post) {

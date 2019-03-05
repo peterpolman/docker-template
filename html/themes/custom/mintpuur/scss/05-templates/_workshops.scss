@@ -1,88 +1,99 @@
-.page-workshops {
+.view-display-id-block_2 {
+  padding: 1rem;
+  margin: 1rem 0;
+}
 
-  .jumbotron {
-    display: none;
+.view-workshops {
+  padding-right: 1rem;
+  padding-left: 1rem;
+
+  .views-row {
+    border-bottom: 1px dashed $gray-light;
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+
+    &:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border: 0;
+    }
+  }
+}
+
+.view-workshop-types {
+
+  .view-content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
   }
 
-  .region-content {
-    padding: 2rem 0;
-    margin-bottom: 0;
-    background: transparent;
+  .views-row {
+    position: relative;
+    height: auto;
+    flex: 0 100%;
 
-    .view-content {
-      display: flex;
-      justify-content: flex-start;
-      align-items: flex-start;
-      flex-wrap: wrap;
-      margin: 0 -1rem;
+    @media (min-width: $screen-md) {
+      flex: 0 calc(100% / 3);
     }
 
-    .views-row {
-      position: relative;
-      height: auto;
-      flex: 0 100%;
+  }
 
-      @media (min-width: $screen-md) {
-        flex: 0 calc(100% / 3);
-      }
+  .workshop--teaser {
+    display: block;
+    background-position: center center;
+    background-size: 100% auto;
+    display: flex;
+    flex: 0 100%;
+    height: calc(100vw - 6rem);
+    margin: 1rem;
+    overflow: hidden;
 
+    transition: .25s background-size ease;
+
+    @media (min-width: $screen-md) {
+      height: 112px;
+    }
+    @media (min-width: $screen-lg) {
+      height: 282px;
     }
 
-    .workshop--teaser {
-      display: block;
-      background-position: center center;
-      background-size: 100% auto;
+    .workshop__content {
+      flex: 1 100%;
       display: flex;
-      flex: 0 100%;
-      height: calc(100vw - 6rem);
-      margin: 1rem;
-      overflow: hidden;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+      opacity: .75;
 
-      transition: .25s background-size ease;
+      transition: 0.2s transform ease, 0.2s opacity ease, .2s background-color ease;
+    }
 
-      @media (min-width: $screen-md) {
-        height: 112px;
-      }
-      @media (min-width: $screen-lg) {
-        height: 282px;
-      }
+    &:hover {
+      text-decoration: none;
+      background-size: 105% auto;
 
       .workshop__content {
-        flex: 1 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        width: 100%;
-        height: 100%;
-        opacity: .75;
-
-        transition: 0.2s transform ease, 0.2s opacity ease, .2s background-color ease;
+          background-color: rgba(255,255,255,.75);
+          transform: scale(1.1);
+          opacity: 1;
       }
+    }
 
-      &:hover {
-        text-decoration: none;
-        background-size: 105% auto;
+    h2 {
+      color: $black;
+      font-size: $font-size-xl;
+    }
 
-        .workshop__content {
-            background-color: rgba(255,255,255,.3);
-            transform: scale(1.1);
-            opacity: 1;
-        }
-      }
+    .workshop__duration {
+      color: $black;
+    }
 
-      h2 {
-        color: $black;
-        font-size: $font-size-xl;
-      }
-
-      .workshop__duration {
-        color: $black;
-      }
-
-      .workshop__price {
-        color: $black;
-      }
+    .workshop__price {
+      color: $black;
     }
   }
 }

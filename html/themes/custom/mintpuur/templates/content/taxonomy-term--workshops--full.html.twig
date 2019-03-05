@@ -1,43 +1,22 @@
-{#
-/**
- * @file
- * Default theme implementation to display a taxonomy term.
- *
- * Available variables:
- * - url: URL of the current term.
- * - name: Name of the current term.
- * - content: Items for the content of the term (fields and description).
- *   Use 'content' to print them all, or print a subset such as
- *   'content.description'. Use the following code to exclude the
- *   printing of a given child element:
- *   @code
- *   {{ content|without('description') }}
- *   @endcode
- * - attributes: HTML attributes for the wrapper.
- * - page: Flag for the full page state.
- * - term: The taxonomy term entity, including:
- *   - id: The ID of the taxonomy term.
- *   - bundle: Machine name of the current vocabulary.
- * - view_mode: View mode, e.g. 'full', 'teaser', etc.
- *
- * @see template_preprocess_taxonomy_term()
- *
- * @ingroup themeable
- */
-#}
 <div class="row">
-    <div class="col-md-2">
-        <img src="{{ content.field_workshop_header_image[0] }}" alt="" />
+  <div class="col-md-3">
+      <img class="workshop__image" src="{{ content.field_list_teaser_image[0] }}" alt="" />
+  </div>
+
+  <div class="col-md-9">
+    <p><strong class="workshop__name">{{ name[0]|raw }}</strong></p>
+
+    <p class="workshop_meta">
+      <span class="workshop__duration">
+        <strong>{{ content.field_duration[0] }}</strong> |
+      </span>
+      <span class="workshop__price">
+        <strong>{{ content.field_costs[0] }}</strong>
+      </span>
+    </p>
+
+    <div class="workshop__description">
+      {{ content.field_description[0] }}
     </div>
-    <div class="col-md-10">
-      <div class="workshop__content">
-        <h2>{{ name[0] }}</h2>
-        <div class="workshop__duration">
-          {{ content.field_duration[0] }}
-        </div>
-        <div class="workshop__price">
-          {{ content.field_price[0] }}
-        </div>
-      </div>
   </div>
 </div>

@@ -17,11 +17,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <css-placeholder token="{{ placeholder_token|raw }}">
       <js-placeholder token="{{ placeholder_token|raw }}">
+
+        {% if (root_path) %}
         <style>
-          .jumbotron {
-            background-image: url({{ file_url(header_image) }});
-          }
+          .jumbotron { display: none; }
         </style>
+        {% endif %}
+
+        {% if (header_image is not empty)  %}
+        <style>
+          .jumbotron { display: flex; background-image: url({{ file_url(header_image) }}); }
+        </style>
+        {% endif %}
+
         </head>
 <body{{ attributes.addClass(body_classes) }}>
 <a href="#main-content" class="visually-hidden focusable skip-link">
